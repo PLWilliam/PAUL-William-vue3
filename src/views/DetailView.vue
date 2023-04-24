@@ -76,3 +76,9 @@ onBeforeMount(async ()=>{
         </div>
     </section>
 </template>
+
+<style setup>
+img{
+    max-width:100%
+}
+</style>

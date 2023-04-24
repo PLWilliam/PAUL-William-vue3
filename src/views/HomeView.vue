@@ -4,11 +4,14 @@ import { onBeforeMount,ref } from 'vue';
 import {useRouter} from 'vue-router'
 import axios from 'axios';
 
+const emit = defineEmits(['onClick'])
+
 const router = useRouter();
 const allAmiibo = ref();
 const randomAmiiboList = ref([]);
 
 const pageList = () =>{
+    emit('onClick',false)
     router.push({name:'list'})
 }
 
@@ -54,12 +57,7 @@ onBeforeMount(async ()=>{
 
 <template>
 
-    <!-- Banner -->
-    <section id="banner">
-        <header>
-            <h2>Hey.Bienvenue sur ma collection</h2>
-        </header>
-    </section>
+
 
     <!-- Intro -->
     <!-- ici vous pouvez choisir 3 amiibos au hasard ou juste vos trois préférés -->
@@ -85,6 +83,6 @@ onBeforeMount(async ()=>{
 
 <style scoped>
 img{
-    max-width: fit-content;
+    max-width: 100%;
 }
 </style>
